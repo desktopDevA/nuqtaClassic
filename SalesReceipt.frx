@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/19/2020 21:51:08" ReportInfo.Modified="03/29/2021 13:47:01" ReportInfo.CreatorVersion="2020.4.0.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="receipt" ReferenceName="receipt" DataType="null" Enabled="true">
+      <Column Name="ID" DataType="System.Int32"/>
+      <Column Name="OrderID" DataType="System.Int64"/>
+      <Column Name="ItemID" DataType="System.Int32"/>
+      <Column Name="ItemName" DataType="System.String"/>
+      <Column Name="ItemPrice" DataType="System.Decimal"/>
+      <Column Name="Product_barcode" DataType="System.String"/>
+      <Column Name="cost" DataType="System.Decimal"/>
+      <Column Name="Unit_id" DataType="System.Int32"/>
+      <Column Name="Store_id" DataType="System.Int32"/>
+      <Column Name="Ratio" DataType="System.Decimal"/>
+      <Column Name="Quantity" DataType="System.Decimal"/>
+      <Column Name="Total" DataType="System.Decimal"/>
+      <Column Name="RealPrice" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+    <Parameter Name="comany_name" DataType="System.String"/>
+    <Parameter Name="Discount" DataType="System.String"/>
+    <Parameter Name="NetTotal" DataType="System.String"/>
+    <Parameter Name="Total" DataType="System.String"/>
+    <Parameter Name="NUm" DataType="System.String"/>
+    <Parameter Name="C_N" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="71.99" PaperHeight="0" LeftMargin="0" RightMargin="0" Watermark.Font="Arial, 60pt" UnlimitedHeight="true">
+    <ReportTitleBand Name="ReportTitle1" Width="272.12" Height="103.95" Guides="28.35">
+      <TextObject Name="Text1" Left="53.25" Top="4.45" Width="217.35" Height="18.9" Text="[Date]" Format="Date" Format.Format="d" RightToLeft="true" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text13" Top="56.7" Width="274.05" Height="28.35" Text="[comany_name]" HorzAlign="Center" Font="Droid Arabic Kufi, 9.75pt, style=Bold"/>
+      <TextObject Name="Text16" Left="103.95" Top="79.6" Width="47.25" Height="18.9" Text="[NUm]" HorzAlign="Center" VertAlign="Center" Font="Droid Arabic Kufi, 6pt, style=Bold"/>
+      <TextObject Name="Text17" Left="9.45" Top="85.05" Width="47.25" Height="18.9" Text="[C_N]" HorzAlign="Center" VertAlign="Center" Font="Droid Arabic Kufi, 6pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="107.95" Width="272.12" Height="21.9">
+      <LineObject Name="Line2" Left="273.45" Top="0.45" Width="-274.05" Border.Style="Dash" Diagonal="true"/>
+      <TextObject Name="Text3" Left="148.85" Top="2.45" Width="122.85" Height="18.9" Text="الصنـف" RightToLeft="true" Font="Droid Arabic Kufi, 6pt, style=Bold"/>
+      <TextObject Name="Text4" Left="110.5" Top="3" Width="37.8" Height="18.9" Text="الكمية" RightToLeft="true" Font="Droid Arabic Kufi, 6pt, style=Bold"/>
+      <TextObject Name="Text5" Left="72.8" Top="3" Width="37.8" Height="18.9" Text="السعر" RightToLeft="true" Font="Droid Arabic Kufi, 6pt, style=Bold"/>
+      <TextObject Name="Text6" Left="3.35" Top="3" Width="47.25" Height="18.9" Text="الاجمالي" HorzAlign="Center" RightToLeft="true" Font="Droid Arabic Kufi, 6pt, style=Bold"/>
+      <LineObject Name="Line3" Left="273.15" Top="20.9" Width="-274.05" Border.Style="Dash" Diagonal="true"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="133.85" Width="272.12" Height="19.35" DataSource="receipt">
+      <TextObject Name="Text2" Left="149.1" Top="0.45" Width="122.85" Height="18.9" Text="[receipt.ItemName]" RightToLeft="true" Font="Droid Arabic Kufi, 6.75pt"/>
+      <TextObject Name="Text7" Left="66.15" Width="113.4" Text="[receipt.ItemName]" RightToLeft="true" Font="Droid Arabic Kufi, 6.75pt"/>
+      <TextObject Name="Text8" Left="102.4" Width="37.8" Height="18.9" Text="[receipt.Quantity]" RightToLeft="true" Font="Droid Arabic Kufi, 6.75pt"/>
+      <TextObject Name="Text9" Left="62.6" Width="37.8" Height="18.9" Text="[receipt.ItemPrice]" RightToLeft="true" Font="Droid Arabic Kufi, 6.75pt"/>
+      <TextObject Name="Text10" Left="-9" Width="66.15" Height="18.9" Text="[receipt.Total]" HorzAlign="Center" RightToLeft="true" Font="Droid Arabic Kufi, 6.75pt"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="157.2" Width="272.12" Height="75.6">
+      <LineObject Name="Line4" Left="273.6" Top="24.9" Width="-274.05" Border.Style="Dash" Diagonal="true"/>
+      <TextObject Name="Text11" Left="64.45" Top="51.25" Width="207.9" Height="18.9" Text="الاجمالي" RightToLeft="true" Font="Droid Arabic Kufi, 8.25pt, style=Bold"/>
+      <TextObject Name="Text12" Left="-0.6" Top="2.45" Width="94.5" Height="18.9" Text="[Total]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" RightToLeft="true" Font="Arial, 9.75pt, style=Bold"/>
+      <LineObject Name="Line5" Left="272.9" Top="49.25" Width="-274.05" Border.Style="Dash" Diagonal="true"/>
+      <TextObject Name="Text14" Top="28.35" Width="94.5" Height="18.9" Text="[Discount]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <LineObject Name="Line6" Left="274.05" Top="75.6" Width="-274.05" Border.Style="Dash" Diagonal="true"/>
+      <TextObject Name="Text15" Left="0.45" Top="52.7" Width="94.5" Height="18.9" Text="[NetTotal]" HorzAlign="Center" Font="Arial, 10pt"/>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>
